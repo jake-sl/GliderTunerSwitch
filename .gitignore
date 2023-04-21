@@ -288,6 +288,8 @@ poetry.toml
 
 # ruff
 .ruff_cache/
+.git
+.gitattributes
 
 # LSP config files
 pyrightconfig.json
