@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glider Launch Tuner Control</title>
+    <script>
+        function callAPI(button) {
+            fetch(`/api/${button}`, {
+                method: "POST",
+                headers: {
+                    "Authorization": "Basic " + btoa("api_user:your_api_key")
+                }
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Raspberry Pi Control</h1>
+    <button onclick="callAPI('tune')">TUNE</button>
+    <button onclick="callAPI('ant_a')">ANT A</button>
+    <button onclick="callAPI('ant_b')">ANT B</button>
+    <button onclick="callAPI('disconnect')">DISCONNECT</button>
+</body>
+</html>
